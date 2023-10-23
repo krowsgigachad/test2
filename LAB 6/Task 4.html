@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fibonacci Generator</title>
+</head>
+<body>
+    <h1>Fibonacci Sequence Generator</h1>
+
+    <p>Generate Fibonacci sequence with <input type="number" id="sequenceLength"> numbers.</p>
+    <button onclick="generateFibonacciSequence()">Generate</button>
+
+    <p>Result:</p>
+    <div id="result"></div>
+
+    <script>
+        function fibonacciGenerator(n) {
+            var sequence = [0, 1];
+            for (var i = 2; i < n; i++) {
+                sequence[i] = sequence[i - 1] + sequence[i - 2];
+            }
+            return sequence;
+        }
+
+        function generateFibonacciSequence() {
+            var sequenceLength = document.getElementById("sequenceLength").value;
+            var resultDiv = document.getElementById("result");
+
+            if (sequenceLength < 2) {
+                resultDiv.innerHTML = "Please enter a valid sequence length (at least 2).";
+            } else {
+                var fibonacciSequence = fibonacciGenerator(sequenceLength);
+                resultDiv.innerHTML = "Fibonacci Sequence: " + fibonacciSequence.join(", ");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Who's Buying Lunch</title>
+</head>
+<body>
+
+<script>
+    function selectRandomName(names) {
+        const randomIndex = Math.floor(Math.random() * names.length);
+        const selectedName = names[randomIndex];
+        return selectedName + " is going to buy lunch today.";
+    }
+
+    const names = ["Daniyar", "Nursultan", "Asanali", "Nazken", "Zhansaya"];
+    const result = selectRandomName(names);
+    document.write(result);
+</script>
+
+</body>
+</html>
